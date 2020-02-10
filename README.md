@@ -10,7 +10,7 @@ Then pick one of the following games:
 * [Run](http://www.lessmilk.com/game/run/)
 * [The Square](http://www.lessmilk.com/game/the-square/)
 
-Your job is to implement this game in JavaScript. You can use external libraries, but nothing that would be considered a game framework. Your game must use JavaScript classes/prototypes and objects.
+Your job is to implement this game in JavaScript. You can use external libraries, but nothing that would be considered a game framework. Your game must use JavaScript objects for organization.
 
 ## Additional resources
 
