@@ -33,7 +33,7 @@ class Game {
             // Now we will update the game.
             this.update()
 
-            // Creating the game characters or draw them.
+            // Creating the game characters and draw them.
             this.draw(screen, gameSize)
 
             // Creating frames for the characters to move in ticks?
@@ -110,12 +110,12 @@ class Invader {
         // We are now going to create the way the invaders move in the game.
         // According to Clinton, the characters will move left to right.
         // this, controls the movement of the invaders.
-        this.patrolX = 0
+        this.patrolX = 2
 
         // We are going to define the speed and rate the invaders move here.
         // Right will be a positive value
         // Left will be a negative value.
-        this.speedX = 1
+        this.speedX = 4
     }
 
     // We are going to update the state of the invader for a single tick below.
@@ -128,14 +128,14 @@ class Invader {
 
 
         // This is a random math function that is stated in the directions like this "If coin flip comes up and no friends below in this invader's column.
-        if (Math.random() > 0.995 &&
+        if (Math.random() > .98 &&
             !this.game.invadersBelow(this)) {
             // Creating a bullet that will move below the invader and in a downward direction.
             const bullet = new Bullet({
                 x: this.center.x,
                 y: this.center.y + this.size.y / 2
             }, {
-                x: Math.random() - 0.5,
+                x: Math.random() - 1,
                 y: 2
             })
 
@@ -156,10 +156,10 @@ function createInvaders(game) {
     const invaders = []
     for (let i = 0; i < 24; i++) {
         // This creates three separate rows for the invaders to operate in.
-        const x = 30 + (i % 8) * 30
+        const x = 40 + (i % 8) * 30
 
         // Place invaders in three rows.
-        const y = 30 + (i % 3) * 30
+        const y = 40 + (i % 3) * 30
 
 
         // Create an invader.
@@ -181,8 +181,8 @@ class Player {
     constructor(game, gameSize) {
         this.game = game
         this.size = {
-            x: 40,
-            y: 40
+            x: 50,
+            y: 50
         }
         this.center = {
             x: gameSize.x / 2,
@@ -237,7 +237,7 @@ class Bullet {
     constructor(center, velocity) {
         this.center = center
         this.size = {
-            x: 3,
+            x: 2,
             y: 3
         }
         this.velocity = velocity
